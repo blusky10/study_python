@@ -5,8 +5,8 @@ from urllib.error import URLError
 from bs4 import BeautifulSoup
 
 import os
-os.environ["HTTP_PROXY"] = "http://70.10.15.10:8080"
-os.environ["HTTPS_PROXY"] = "http://70.10.15.10:8080"
+os.environ["HTTP_PROXY"] = ""
+os.environ["HTTPS_PROXY"] = ""
 os.environ["PYTHONHTTPSVERIFY"] = "0"
 
 def getTitle(url):
