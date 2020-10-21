@@ -16,7 +16,7 @@ def topics(request):
 def topic(request, topic_id):
     topic = Topic.objects.get(id=topic_id)
     entries = topic.entry_set.order_by('-date_added')
-    context = {'topic_id':topic_id, 'entries': entries}
+    context = {'topic':topic, 'entries': entries}
     return render(request, 'learning_logs/topic.html', context)
 
 def new_topic(request):
@@ -30,7 +30,7 @@ def new_topic(request):
     context = {'form': form}
     return render(request, 'learning_logs/new_topic.html', context)
 
-def new_entry(request):
+def new_entry(request, topic_id):
     topic = Topic.objects.get(id=topic_id)
 
     if request.method != 'POST':
@@ -42,6 +42,5 @@ def new_entry(request):
             new_entry.topic = topic
             new_entry.save()
             return redirect('learning_logs:topic', topic_id=topic_id)
-
     context = {'topic': topic, 'form': form}
     return render(request, 'learning_logs/new_entry.html', context)
