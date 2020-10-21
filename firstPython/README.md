@@ -71,14 +71,27 @@ root
 프로젝트 내에서 앱을 추가하여 구성할 수 있다. 
 
     python manage.py startapp [앱이름]
+    python manage.py makemigrations [앱이름]
+    python manage.py migrate
 
-python manage.py makemigrations [앱이름]
+### admin 사이트
 
-python manage.py migrate
+- superuser 만들기
+        
+        python manage.py createsuperuser
 
+- 접속 URL : 접속URL/admin
 
 ### Web 에 Page 추가
 
 - urls.py 에 path 추가
+
+        urlpatterns = [
+        path('new_entry/<int:topic_id>/', views.new_entry, name='new_entry'),
+        ]       
+
 - views.py 에 추가
+
+        def new_entry():
+        
 - html 파일 작성
