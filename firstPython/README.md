@@ -72,12 +72,13 @@ root
 
     python manage.py startapp [앱이름]
 
-
-
 python manage.py makemigrations [앱이름]
 
 python manage.py migrate
 
- 
 
+### Web 에 Page 추가
 
+- urls.py 에 path 추가
+- views.py 에 추가
+- html 파일 작성
