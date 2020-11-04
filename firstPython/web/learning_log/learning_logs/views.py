@@ -30,18 +30,21 @@ def topic(request, topic_id):
 
 @login_required
 def new_topic(request):
+    """새 주제를 추가한다"""
     if request.method != 'POST':
         form = TopicForm()
     else:
         form = TopicForm(data=request.POST)        
         if form.is_valid():
-            form.save()
+            new_topic = form.save(commit=False)
+            new_topic.owner = request.user
+            new_topic.save()
             return redirect('learning_logs:topics')
     context = {'form': form}
     return render(request, 'learning_logs/new_topic.html', context)
 
 @login_required
-def new_entry(request, topic_id):
+def new_entry(request, topic_id):    
     topic = Topic.objects.get(id=topic_id)
 
     if request.method != 'POST':
