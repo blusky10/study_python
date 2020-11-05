@@ -108,3 +108,10 @@ python manage.py migrate
   def new_entry():
   ```        
 - html 파일 작성
+
+
+### 페이지에 권한 추가
+
+from django.contrib.auth.decorators import login_required
+
+@login_required 사용
