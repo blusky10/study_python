@@ -115,3 +115,15 @@ python manage.py migrate
 from django.contrib.auth.decorators import login_required
 
 @login_required 사용
+
+### 배포
+
+- bootstrap 추가
+  pip install django-bootstrap4
+
+- setting.py 에 bootstrap4 추가  
+  ```
+  INSTALLED_APPS = [
+    'bootstrap4',
+    ..
+  ```
