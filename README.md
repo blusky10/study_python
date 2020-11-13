@@ -11,3 +11,7 @@
 ## web_scraping
 
 - Web Scraping with Python(한빛미디어)
+
+## financialEng
+
+- 파이썬을 활용한 금융공학 레시피(한빛미디어)
