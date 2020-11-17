@@ -3,8 +3,8 @@ import pandas as pd
 from urllib.request import urlopen
 import json
 import os
-os.environ["HTTP_PROXY"] = "http://70.10.15.10:8080"
-os.environ["HTTPS_PROXY"] = "http://70.10.15.10:8080"
+os.environ["HTTP_PROXY"] = ""
+os.environ["HTTPS_PROXY"] = ""
 os.environ["PYTHONHTTPSVERIFY"] = "0"
 
 def read_json(d, symbol, page=1):

@@ -3,8 +3,8 @@ from urllib.request import urlopen
 import datetime as dt
 import bs4
 import os
-os.environ["HTTP_PROXY"] = "http://70.10.15.10:8080"
-os.environ["HTTPS_PROXY"] = "http://70.10.15.10:8080"
+os.environ["HTTP_PROXY"] = ""
+os.environ["HTTPS_PROXY"] = ""
 os.environ["PYTHONHTTPSVERIFY"] = "0"
 
 def date_format(d):
